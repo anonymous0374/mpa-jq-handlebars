@@ -1,1 +1,0 @@
-webpackJsonp([1],{"K7YL":function(n,t,e){"use strict";e("sZXY"),e("PxBn"),alert("demo/index");var c=(new Set([1,2,3]),[1,2,3,4]);[6].concat(c);setTimeout(function(){$.ajax({"url":"/tmsMI/a","complete":function(){}})},3e3)},"PxBn":function(n,t,e){"use strict"},"sZXY":function(n,t){}},["K7YL"]);

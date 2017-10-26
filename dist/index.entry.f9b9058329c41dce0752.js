@@ -1,1 +1,0 @@
-webpackJsonp([0],{"3XJ2":function(n,t){},"PxBn":function(n,t,u){"use strict"},"U67u":function(n,t,u){"use strict";u("3XJ2"),u("PxBn"),alert("我是首页")}},["U67u"]);

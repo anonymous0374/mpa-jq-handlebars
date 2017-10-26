@@ -12,24 +12,24 @@ if (!script) {
 }
 
 switch (script) {
-  case '-v':
-  case '--version':
-    console.log(require('../package.json').version);
-    break;
-  case 'start':
-  case 'build':
-  case 'vendor':
-    var result = spawn.sync(
-      /*'npm',
-      ['run', script],
-      { stdio: 'inherit' } */
-      'node',
-      [require.resolve(`./${script}`)].concat(args),
-      { stdio: 'inherit' }
-    );
-    process.exit(result.status);
-    break;
-  default:
-    console.log(`未知的脚本命令： ${chalk.cyan(script)}.`);
-    break;
+case '-v':
+case '--version':
+  console.log(require('../package.json').version);
+  break;
+case 'start':
+case 'build':
+case 'vendor':
+  var result = spawn.sync(
+    /*'npm',
+    ['run', script],
+    { stdio: 'inherit' } */
+    'node', [require.resolve(`./${script}`)].concat(args), {
+      stdio: 'inherit'
+    }
+  );
+  process.exit(result.status);
+  break;
+default:
+  console.log(`未知的脚本命令： ${chalk.cyan(script)}.`);
+  break;
 }
