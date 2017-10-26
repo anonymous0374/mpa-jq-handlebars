@@ -1,0 +1,1 @@
+webpackJsonp([3],{"TgT9":function(e,t,d){"use strict";var n=document.createElement("div");n.style="width:100px;height:100px;background:red;",document.body.appendChild(n)}},["TgT9"]);

@@ -1,5 +1,5 @@
 module.exports = {
-  mode: null, // null: multiple pages application, 'single': single page application
+  mode: 'mul', // 'mul': multiple pages application, 'single': single page application
   // 别名
   alias: {
     // 目录别名
@@ -22,10 +22,10 @@ module.exports = {
     // 读取哪些文件打包，
     // 注意，除了node_modules目录下面的，只能是srcPath目录下面的文件
     entry: {
-      vendor: ['jquery', 'babel-polyfill', 'tf-jq-spa'],
-      css: ['./vendor/a.css', './vendor/b.css'],
+      //vendor: ['jquery', 'babel-polyfill', 'tf-jq-spa'],
+      //css: ['./vendor/a.css', './vendor/b.css'],
       iePolyfill: [
-        'es5-shim',
+        // 'es5-shim',
         // './vendor/ie8_patch/es5_safe.min.js',
         './vendor/ie8_patch/html5shiv.min.js',
         './vendor/ie8_patch/json.min.js',
