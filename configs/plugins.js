@@ -17,9 +17,6 @@ function createPages() {
   let tplName = config.tplName;
   let pagesArr = [];
 
-  console.log('config: ')
-  console.log(config)
-
   if (config.mode === 'mul') {
     Object.keys(entries).forEach(function (v) {
       pagesArr.push(new HtmlWebpackPlugin({

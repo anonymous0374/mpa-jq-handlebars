@@ -6,7 +6,6 @@ const utils = require('./utils');
 
 // 获取代码根路径下文件及文件夹的名称，用以提示名称冲突
 function getSrcFilesName() {
-  console.log(`getSrcFilesName`)
   var obj = {};
   let srcPath = config.srcPath;
 
@@ -18,15 +17,12 @@ function getSrcFilesName() {
     };
   })
 
-  console.log(`source file names: `)
-  console.log(obj)
   return obj;
 }
 
 // 检查根路径下文件及文件夹的名称 与 页面路径 是否有冲突，防止文件覆盖
 // 如果是单页面模式，还会检查去掉singleFullPagePrefix前缀，是否有冲突
 function checkNameConflict(pagesNames, srcNames) {
-  console.log(`checkNameConflict`)
   for (let i in srcNames) {
     if (pagesNames[i] &&
       pagesNames[i].isDir === srcNames[i].isDir) {
@@ -86,9 +82,7 @@ function getDirsName(dir, arr, prefix) {
   return arr;
 }
 
-// 入口
 function getEntries() {
-  console.log(`getEntries`)
   let obj = {},
     pagesNames = {};
 
@@ -114,8 +108,6 @@ function getEntries() {
 
   // 公共基础JS依赖
   // obj['commons/vendor'] = Object.keys(pkg.dependencies);
-  console.log(`Entries: `)
-  console.log(obj)
   return obj;
 }
 
