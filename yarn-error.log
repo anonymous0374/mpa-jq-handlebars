@@ -1,0 +1,102 @@
+Arguments: 
+  C:\nodejs\node.exe C:\yarn\bin\yarn.js
+
+PATH: 
+  C:\Users\dell\bin;C:\Git\mingw64\bin;C:\Git\usr\local\bin;C:\Git\usr\bin;C:\Git\usr\bin;C:\Git\mingw64\bin;C:\Git\usr\bin;C:\Users\dell\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Git\cmd;C:\Program Files\TortoiseSVN\bin;C:\nodejs;C:\yarn\bin;C:\PuTTY;C:\mscode\bin;C:\Users\dell\AppData\Local\Microsoft\WindowsApps;C:\Users\dell\AppData\Roaming\npm;C:\Users\dell\AppData\Local\Yarn\bin;C:\Git\usr\bin\vendor_perl;C:\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.1.0
+
+Node version: 
+  6.11.3
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "tf-jq",
+    "version": "0.0.6",
+    "description": "Webpack + jQuery的单页和多页方案",
+    "main": "index.js",
+    "bin": {
+      "tfjq": "./bin/tfjq.js"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "webpack-dev-server --open --inline --hot --config ./configs/webpack.config.develop.js",
+      "starts": "webpack-dev-server --open --inline --hot --https --config ./configs/webpack.config.develop.js",
+      "build": "webpack --config ./configs/webpack.config.production.js",
+      "dll": "webpack --config ./configs/webpack.config.dll.js",
+      "vendor": "node ./configs/webpack.config.vendor.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "autoprefixer": "7.1.4",
+      "babel-core": "6.26.0",
+      "babel-eslint": "^8.0.1",
+      "babel-loader": "7.1.2",
+      "babel-polyfill": "^6.26.0",
+      "babel-preset-es2015": "6.24.1",
+      "babel-preset-es2015-loose": "^8.0.0",
+      "babel-preset-stage-0": "6.24.1",
+      "chalk": "^2.1.0",
+      "clean-css": "^4.1.9",
+      "clean-webpack-plugin": "0.1.16",
+      "cross-spawn": "^5.1.0",
+      "css-loader": "0.28.7",
+      "ejs-loader": "0.3.0",
+      "es3ify-loader": "^0.2.0",
+      "eslint": "4.6.1",
+      "eslint-friendly-formatter": "3.0.0",
+      "eslint-loader": "1.9.0",
+      "express": "^4.16.1",
+      "extract-text-webpack-plugin": "3.0.0",
+      "file-loader": "0.11.2",
+      "friendly-errors-webpack-plugin": "^1.6.1",
+      "glob": "7.1.2",
+      "html-loader": "0.5.1",
+      "html-webpack-plugin": "2.30.1",
+      "imagemin-webpack-plugin": "1.5.2",
+      "jquery": "^3.2.1",
+      "less": "2.7.2",
+      "less-loader": "4.0.5",
+      "node-notifier": "^5.1.2",
+      "open-browser-webpack-plugin": "^0.0.5",
+      "postcss-loader": "2.0.6",
+      "script-loader": "^0.7.1",
+      "style-loader": "0.18.2",
+      "tf-html-hot-loader": "^0.0.2",
+      "uglify-js": "^3.1.2",
+      "url-loader": "0.5.9"
+    },
+    "devDependencies": {
+      "tf-jq": "*",
+      "webpack": "3.5.5",
+      "webpack-dev-server": "2.7.1",
+      "webpack-merge": "4.1.0"
+    },
+    "_from": "tf-jq@0.0.6",
+    "_resolved": "http://registry.npm.taobao.org/tf-jq/download/tf-jq-0.0.6.tgz"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: http://registry.yarnpkg.com/autoprefixer: Invalid protocol: socks5:
+      at Request.module.exports.Request.init (C:\yarn\lib\cli.js:122189:31)
+      at new Request (C:\yarn\lib\cli.js:121859:8)
+      at request (C:\yarn\lib\cli.js:120457:10)
+      at RequestManager.execute (C:\yarn\lib\cli.js:61824:17)
+      at RequestManager.shiftQueue (C:\yarn\lib\cli.js:61851:10)
+      at promise.default (C:\yarn\lib\cli.js:61628:12)
+      at Promise.F (C:\yarn\lib\cli.js:29353:28)
+      at RequestManager.request (C:\yarn\lib\cli.js:61626:21)
+      at NpmRegistry.request (C:\yarn\lib\cli.js:30321:32)
+      at C:\yarn\lib\cli.js:48324:54
