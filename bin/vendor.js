@@ -1,0 +1,1 @@
+require('../lib/webpack.config.vendor.js')
