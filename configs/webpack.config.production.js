@@ -10,7 +10,6 @@ let proConfig = require('./webpack.config.pro.js');
 
 let webpackConfig = merge({
   plugins: [
-    // 清除
     new CleanWebpackPlugin([config.outputPath], {
       root: config.rootPath
     }),

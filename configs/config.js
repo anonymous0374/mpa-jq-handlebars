@@ -1,5 +1,5 @@
-// merge default configurations and custom configurations
-// default configuration: lib/defaultConfig.js
+// merge default configurations with custom configurations
+// default configuration: ./lib/defaultConfig.js
 // custom configuration: ./config
 
 const fs = require('fs');

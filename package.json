@@ -8,11 +8,11 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open --inline --hot --config ./lib/webpack.config.develop.js",
-    "starts": "webpack-dev-server --open --inline --hot --https --config ./lib/webpack.config.develop.js",
-    "build": "webpack --config ./lib/webpack.config.production.js",
-    "dll": "webpack --config ./lib/webpack.config.dll.js",
-    "vendor": "node ./lib/webpack.config.vendor.js"
+    "start": "webpack-dev-server --open --inline --hot --config ./configs/webpack.config.develop.js",
+    "starts": "webpack-dev-server --open --inline --hot --https --config ./configs/webpack.config.develop.js",
+    "build": "webpack --config ./configs/webpack.config.production.js",
+    "dll": "webpack --config ./configs/webpack.config.dll.js",
+    "vendor": "node ./configs/webpack.config.vendor.js"
   },
   "keywords": [],
   "author": "",

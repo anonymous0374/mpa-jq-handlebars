@@ -44,7 +44,7 @@ module.exports = {
 
   srcPath: './src', // 代码根路径
 
-  useESlint: true, // 是否开启ESlint检测
+  useESlint: false, // 是否开启ESlint检测
 
   cssModules: false, // 是否开启css modules
 
