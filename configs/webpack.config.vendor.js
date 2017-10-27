@@ -45,9 +45,9 @@ function handleNodeMudulesPath(module_name) {
   }
 
   if (module_path) {
-    utils.richlog(`${module_name}`, `${module_path}`, utils.LOGTYPE.SUCCESSFUL)
+    utils.richlog(`${module_name} found at ${module_path}`, utils.LOGTYPE.SUCCESSFUL)
   } else {
-    utils.log(`${module_name}`, `not found at ${module_path}`, 'red')
+    utils.richlog(`${module_name}`, `not found at ${module_path}, please install it`, utils.LOGTYPE.FAILED)
   }
 
   return module_path
@@ -78,12 +78,12 @@ function handleMini(way) {
   let code = fs.readFileSync(way, 'utf-8')
 
   if (suffix === 'js') {
-    utils.log('compress js', way, 'white')
+    utils.richlog(`compress js ${way}`, utils.LOGTYPE.SUCCESSFUL)
     code = miniJS(code)
   }
 
   if (suffix === 'css') {
-    utils.log('compress CSS', way, 'white')
+    utils.richlog(`compress css ${way}`, utils.LOGTYPE.SUCCESSFUL)
     code = miniCSS(code)
   }
 
@@ -95,7 +95,8 @@ function handleMini(way) {
 
 // handle two kinds of vendor modules: .js and .css
 function combine() {
-  utils.richlog(`entry`, utils.LOGTYPE.INFO)
+  utils.richlog(`vendor modules to combine: `, utils.LOGTYPE.INFO)
+  console.log((entry)['yellow'])
 
   for (let entry_name in entry) {
     let code = {}
@@ -128,8 +129,6 @@ function combine() {
       })
     }
   }
-
-  utils.log(`combine vendor done`, '')
 }
 
 // 获取被引用过的文件列表，
@@ -154,7 +153,7 @@ function getFiles() {
 // copy files that are not involved by also under srcPath
 function copyFiles() {
   let files = getFiles()
-  console.log(`>>>> manually copy files that are not processed by webpack, but are under ${srcPath}`)
+  utils.richlog(`manually copy files that are not processed by webpack, but are under ${srcPath}`, utils.LOGTYPE.INFO)
 
   travel(srcPath, function (p) {
     if (!files[p]) {
@@ -164,8 +163,6 @@ function copyFiles() {
       copy(p, dist)
     }
   })
-
-  console.log(`>>>> copy files done`)
 }
 
 // 执行
