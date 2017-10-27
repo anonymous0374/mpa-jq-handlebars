@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin'); // 错误信息提示插件
 const notifier = require('node-notifier'); // 消息通知插件
 
-const utils = require('./utils');
+const utils = require('../tools/utils');
 const entries = require('./entry.js');
 const config = require('./mergedConfig.js');
 const JqSpaHtmlPlugin = require('./jq-spa-html-plugin');

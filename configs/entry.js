@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const config = require('./mergedConfig.js');
 
-const utils = require('./utils');
+const utils = require('../tools/utils');
 
 // 获取代码根路径下文件及文件夹的名称，用以提示名称冲突
 function getSrcFilesName() {

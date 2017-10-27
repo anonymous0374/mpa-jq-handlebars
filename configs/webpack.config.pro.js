@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const config = require('./mergedConfig.js');
-const utils = require('./utils.js');
+const utils = require('../tools/utils.js');
 // let webpackConfig = require('./config/webpack.config.base.js');
 
 // 抽取css，开发环境不能用这个，否则修改css无法自动刷新

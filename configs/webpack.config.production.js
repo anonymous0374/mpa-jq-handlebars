@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const config = require('./mergedConfig.js');
 
-const utils = require('./utils.js');
+const utils = require('../tools/utils.js');
 
 let baseConfig = require('./webpack.config.base.js');
 let proConfig = require('./webpack.config.pro.js');

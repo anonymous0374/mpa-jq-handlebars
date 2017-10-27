@@ -4,7 +4,7 @@ const eslintFormatter = require('eslint-friendly-formatter');
 const webpack = require('webpack');
 
 const config = require('./mergedConfig.js');
-const utils = require('./utils.js');
+const utils = require('../tools/utils.js');
 let webpackConfig = require('./webpack.config.base.js');
 
 // eslint

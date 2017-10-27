@@ -5,7 +5,8 @@ let Uglify = require('uglify-js');
 let CleanCSS = require('clean-css');
 
 require('./color');
-const config = require('./mergedConfig.js');
+// decouple the dependency: utils.js requires mergedConfig.js, utils should not depend on configs
+// const config = require('./mergedConfig.js');
 
 // 以.或..开头
 let DOT_RE = /^\.(\.)?\//;

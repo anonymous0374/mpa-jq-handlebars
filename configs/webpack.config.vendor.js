@@ -1,6 +1,6 @@
 let fs = require('fs')
 let path = require('path')
-let utils = require('./utils.js')
+let utils = require('../tools/utils.js')
 let config = require('./mergedConfig.js')
 
 let SUFFIX_RE = utils.SUFFIX_RE
