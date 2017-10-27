@@ -5,7 +5,7 @@ let Uglify = require('uglify-js');
 let CleanCSS = require('clean-css');
 
 require('./color');
-const config = require('./config.js');
+const config = require('./mergedConfig.js');
 
 // 以.或..开头
 let DOT_RE = /^\.(\.)?\//;
@@ -187,8 +187,38 @@ function miniCSS(code) {
 }
 
 function log(tag, msg, color) {
-  console.log((tag + ': ' + msg)[color || 'white']);
+  console.log(('>' + tag + ': ' + msg)[color || 'white']);
 }
+
+function richlog(msg, type) {
+  var color = 'white'
+
+  switch (type) {
+  case 'info':
+    {
+      break
+    }
+  case 'warnning':
+    {
+      color = 'yellow'
+      break
+    }
+  case 'successful':
+    {
+      color = 'green'
+      break
+    }
+  case 'failed':
+    {
+      color = 'red'
+    }
+  default:
+  }
+
+  console.log((msg)[color])
+}
+
+
 
 // 字符串转为正则
 function escapeReg(str, exclude, flag) {
@@ -232,3 +262,10 @@ exports.miniJS = miniJS;
 exports.miniCSS = miniCSS;
 exports.DOT_RE = DOT_RE;
 exports.SUFFIX_RE = SUFFIX_RE;
+exports.richlog = richlog
+exports.LOGTYPE = {
+  INFO: 'info',
+  WARNNING: 'warnning',
+  SUCCESSFUL: 'success',
+  FAILED: 'failed'
+}

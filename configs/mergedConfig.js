@@ -40,7 +40,7 @@ if (config.https) {
 }
 
 // config.svgPath = path.resolve(rootPath, config.svgPath)
-console.log(`>>>> configuration merged `)
+console.log((`configuration merged\n`)['green'])
   // console.log(config)
 
 module.exports = config;

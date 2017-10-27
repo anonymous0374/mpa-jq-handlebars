@@ -1,7 +1,7 @@
 let fs = require('fs')
 let path = require('path')
 let utils = require('./utils.js')
-let config = require('./config.js')
+let config = require('./mergedConfig.js')
 
 let SUFFIX_RE = utils.SUFFIX_RE
 let DOT_RE = utils.DOT_RE
@@ -30,7 +30,7 @@ function handleNodeMudulesPath(module_name) {
   if (alias) {
     module_path = path.resolve(node_modules, alias)
   } else {
-    console.log(`${module_name} has no alias, look for its path with help of package.json.`)
+    utils.richlog(`${module_name} has no alias, look for its path with help of package.json.`, utils.LOGTYPE.WARNNING)
     let base = path.resolve(node_modules, module_name)
     let pk = path.resolve(base, 'package.json')
     let pkConfig = JSON.parse(fs.readFileSync(pk, 'utf-8'));
@@ -45,9 +45,9 @@ function handleNodeMudulesPath(module_name) {
   }
 
   if (module_path) {
-    console.log(`found node_module ${module_name} at directory: ${module_path}`)
+    utils.richlog(`${module_name}`, `${module_path}`, utils.LOGTYPE.SUCCESSFUL)
   } else {
-    console.log(`!!!! cannot find node_module ${module_name}`)
+    utils.log(`${module_name}`, `not found at ${module_path}`, 'red')
   }
 
   return module_path
@@ -56,16 +56,14 @@ function handleNodeMudulesPath(module_name) {
 // minification
 function handleMini(way) {
   let suffix = way.match(SUFFIX_RE)
-
-  if (suffix === null) { // 没有后缀
+  if (suffix === null) {
     let t1 = way + '.js'
     let t2 = way + '.css'
 
-    // 先尝试JS后缀，再尝试CSS后缀
-    if (fs.existsSync(t1)) {
+    if (fs.existsSync(t1)) { // guessing it's js
       way = t1
       suffix = 'js'
-    } else if (fs.existsSync(t2)) {
+    } else if (fs.existsSync(t2)) { // if not js, then it's css
       way = t2
       suffix = 'css'
     }
@@ -74,18 +72,18 @@ function handleMini(way) {
   }
 
   if (!fs.existsSync(way)) {
-    throw new Error('文件: ' + way + '不存在')
+    throw new Error('file: ' + way + ' does not exist')
   }
 
   let code = fs.readFileSync(way, 'utf-8')
 
   if (suffix === 'js') {
-    // utils.log('>>>> compress JS', way, 'white')
+    utils.log('compress js', way, 'white')
     code = miniJS(code)
   }
 
   if (suffix === 'css') {
-    // utils.log('>>>> compress CSS', way, 'white')
+    utils.log('compress CSS', way, 'white')
     code = miniCSS(code)
   }
 
@@ -97,8 +95,7 @@ function handleMini(way) {
 
 // handle two kinds of vendor modules: .js and .css
 function combine() {
-  console.log(`>>>> start to combine these vendor entries: `)
-  console.log(entry);
+  utils.richlog(`entry`, utils.LOGTYPE.INFO)
 
   for (let entry_name in entry) {
     let code = {}
@@ -118,7 +115,7 @@ function combine() {
         mini = handleMini(module_path)
         code[mini.suffix] = (code[mini.suffix] || '') + mini.code
       } catch (err) {
-        console.log(`!!!! cannot find vendor: ${v}`)
+        utils.log(`cannot find vendor: `, `${v}`, 'red')
       }
 
     })
@@ -126,13 +123,13 @@ function combine() {
     for (let entry_type in code) {
       mkdirSync(outputPath, function () {
         let file = path.join(outputPath, entry_name + '.' + entry_type)
-        utils.log('>>>> generated compressed vendor file: ', file, 'green')
+        utils.log('generated compressed vendor file: ', file, 'green')
         fs.writeFileSync(file, code[entry_type])
       })
     }
   }
 
-  console.log(`>>>> combine vendor js done`)
+  utils.log(`combine vendor done`, '')
 }
 
 // 获取被引用过的文件列表，
