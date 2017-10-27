@@ -196,20 +196,24 @@ function richlog(msg, type) {
   switch (type) {
   case 'info':
     {
+      msg = 'INFO: ' + msg
       break
     }
   case 'warnning':
     {
+      msg = 'WARN: ' + msg
       color = 'yellow'
       break
     }
   case 'successful':
     {
+      msg = 'SUCCESS: ' + msg
       color = 'green'
       break
     }
   case 'failed':
     {
+      msg = 'FAIL: ' + msg
       color = 'red'
     }
   default:

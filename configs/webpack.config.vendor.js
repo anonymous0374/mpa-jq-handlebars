@@ -124,7 +124,7 @@ function combine() {
     for (let entry_type in code) {
       mkdirSync(outputPath, function () {
         let file = path.join(outputPath, entry_name + '.' + entry_type)
-        utils.log('generated compressed vendor file: ', file, 'green')
+        utils.richlog(`generated compressed vendor file: ${file}`, utils.LOGTYPE.SUCCESSFUL)
         fs.writeFileSync(file, code[entry_type])
       })
     }
@@ -159,7 +159,7 @@ function copyFiles() {
     if (!files[p]) {
       let name = p.replace(srcPath, '')
       let dist = path.join(outputPath, name)
-      utils.log('copy ', dist, 'green')
+      utils.richlog(`copy ${dist}`, utils.LOGTYPE.SUCCESSFUL)
       copy(p, dist)
     }
   })

@@ -5,6 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 const rootPath = process.cwd(); //path.resolve(__dirname, '../');
+// const utils = require('./utils.js');
 
 const defaultCfg = require('./default.config.js'); // default config
 var customConfig = null; // custom config
@@ -40,7 +41,8 @@ if (config.https) {
 }
 
 // config.svgPath = path.resolve(rootPath, config.svgPath)
-console.log((`configuration merged\n`)['green'])
-  // console.log(config)
+// console.log((`configuration merged\n`)['green'])
+//utils.richlog(`configuration merged`, utils.LOGTYPE.INFO)
+// console.log(config)
 
 module.exports = config;

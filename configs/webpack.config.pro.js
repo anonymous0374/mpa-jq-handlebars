@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
+// const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -73,10 +73,11 @@ module.exports = {
     }),
 
     // 压缩图片
+    /*
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
       minFileSize: config.imgCompressLimit
-    }),
+    }),*/
 
     extractLess
   ]
