@@ -96,7 +96,7 @@ function handleMini(way) {
 // handle two kinds of vendor modules: .js and .css
 function combine() {
   utils.richlog(`vendor modules to combine: `, utils.LOGTYPE.INFO)
-  console.log((entry)['yellow'])
+  console.log(entry)
 
   for (let entry_name in entry) {
     let code = {}

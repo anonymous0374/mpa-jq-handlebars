@@ -266,6 +266,6 @@ exports.richlog = richlog
 exports.LOGTYPE = {
   INFO: 'info',
   WARNNING: 'warnning',
-  SUCCESSFUL: 'success',
+  SUCCESSFUL: 'successful',
   FAILED: 'failed'
 }
