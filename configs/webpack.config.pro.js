@@ -3,7 +3,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const config = require('./config.js');
+const config = require('./mergedConfig.js');
 const utils = require('./utils.js');
 // let webpackConfig = require('./config/webpack.config.base.js');
 

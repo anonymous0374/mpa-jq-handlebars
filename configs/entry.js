@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const config = require('./config.js');
+const config = require('./mergedConfig.js');
 
 const utils = require('./utils');
 

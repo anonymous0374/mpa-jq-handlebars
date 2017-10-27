@@ -3,7 +3,7 @@ const merge = require('webpack-merge');
 const eslintFormatter = require('eslint-friendly-formatter');
 const webpack = require('webpack');
 
-const config = require('./config.js');
+const config = require('./mergedConfig.js');
 const utils = require('./utils.js');
 let webpackConfig = require('./webpack.config.base.js');
 

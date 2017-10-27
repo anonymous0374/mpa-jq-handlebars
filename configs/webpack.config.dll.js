@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 let webpackConfig = require('./webpack.config.pro.js');
-const config = require('./config.js');
+const config = require('./mergedConfig.js');
 
 console.log(`dll entries: `)
 console.log(config.dll.entry)

@@ -1,7 +1,7 @@
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const config = require('./config.js');
+const config = require('./mergedConfig.js');
 
 const utils = require('./utils.js');
 

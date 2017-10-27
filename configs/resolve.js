@@ -1,4 +1,4 @@
-const config = require('./config.js');
+const config = require('./mergedConfig.js');
 
 module.exports = {
   // 别名

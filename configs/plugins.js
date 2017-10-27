@@ -7,7 +7,7 @@ const notifier = require('node-notifier'); // 消息通知插件
 
 const utils = require('./utils');
 const entries = require('./entry.js');
-const config = require('./config.js');
+const config = require('./mergedConfig.js');
 const JqSpaHtmlPlugin = require('./jq-spa-html-plugin');
 // var CopyWebpackPlugin = require('copy-webpack-plugin');
 
